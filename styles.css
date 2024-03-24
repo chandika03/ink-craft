@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #8cb9bd;
+  background: #747264;
 }
 .container {
   position: relative;
@@ -27,7 +27,7 @@ body {
   left: -50%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #a3b763, #a9b388);
+  background: linear-gradient(-45deg, #a4907c, #c8b6a6);
   z-index: 6;
   transform: translateX(100%);
   transition: 1s ease-in-out;
