@@ -11,15 +11,15 @@
 <body>
     <div class="container">
         <div class="signin-signup">
-            <form action="" class="sign-in-form">
-                <h2 class="title">Sign in</h2>
+            <form action="logindb.php" class="sign-in-form" method="POST">
+                <h2 class="title">Log in</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Username" name="uname">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="password">
                 </div>
                 <input type="submit" value="Login" class="btn">
                 <p class="social-text">Or Sign in with social platform</p>
@@ -39,7 +39,7 @@
                 </div>
                 <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
             </form>
-            <form action="" class="sign-up-form">
+            <form action="signupdb.php" class="sign-up-form" method="POST">
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
@@ -73,7 +73,7 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
-                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Login in</a></p>
             </form>
         </div>
         <div class="panels-container">
@@ -81,7 +81,7 @@
                 <div class="content">
                     <h3>Already a member of Art-Craft?</h3>
                     <p>Login using your username and password using the button below</p>
-                    <button class="btn" id="sign-in-btn">Sign in</button>
+                    <button class="btn" id="sign-in-btn">Log in</button>
                 </div>
                 <img src="images/6.png" alt="" class="image">
             </div>
