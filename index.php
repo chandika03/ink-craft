@@ -43,19 +43,19 @@
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Username" name="uname">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Email" name="email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="password">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="cpassword" placeholder="Confirm Password">
+                    <input type="password" placeholder="Confirm Password" name="cpassword">
                 </div>
                 <input type="submit" value="Sign up" class="btn">
                 <p class="social-text">Or Sign in with social platform</p>
