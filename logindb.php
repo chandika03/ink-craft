@@ -1,25 +1,24 @@
 <?php
-    include('dbconn.php');
-    session_start();
-    $uname = $_POST['uname'];
-    $password = $_POST['password'];
+session_start();
+include('dbconn.php');
 
-    $query = ('SELECT id, username, password FROM users');
-    $stmt = $pdo->prepare($query);
-    $stmt -> execute();
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-    $value = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$query = "SELECT id, username, password FROM users WHERE username = ?";
+$stmt = $pdo->prepare($query);
+$stmt->execute([$username]);
 
-    foreach($value as $item){
-        if($uname == $item['username'] && password_verify($password, $item['password'])){
-            $_SESSION['user'] = $item['user_id'];
-            //echo $_SESSION['user']; //checked to see if session is set or not
-            header("Location: /ink-craft/homepage.php");
-        }
-    }
-    if(empty($_SESSION['user'])){//user not found
-        $invalid = "Invalid credentials!";
-        header("Location: /ink-craft/login.php?invalid= $invalid");
-    }
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+if ($user && password_verify($password, $user['password'])) {
+    $_SESSION['user'] = $user['id'];
+    header("Location: /ink-craft/homepage.php");
+    exit();
+} else {
+    // User not found or password incorrect
+    $invalid = "Invalid credentials!";
+    header("Location: /INK-CRAFT/index.php?invalid=$invalid");
+    exit();
+}
 ?>

@@ -1,22 +1,24 @@
 <?php
-    include('dbconn.php');
     session_start();
-
+    include('dbconn.php');
    
-    $uname = $_POST['uname'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
+    $converted_password = password_hash($password, PASSWORD_DEFAULT);
 
     if($password == $cpassword){
-        $query = ('INSERT INTO users(username, email, password) VALUES (:uname, :email, :password)');
+        $query = ('INSERT INTO users(username, email, password) VALUES (:username, :email, :password)');
         $stmt = $pdo->prepare($query);
 
-        $stmt -> bindParam(':uname',$uname);
+        $stmt -> bindParam(':username',$username);
         $stmt -> bindParam(':email',$email);
         $stmt -> bindParam(':password',$password);
 
         $stmt -> execute(); 
+        
+        header("Location: /ink-craft/index.php");
     }
     else{
         $invalid = "Password didn't match";
